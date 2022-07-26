@@ -18,46 +18,36 @@ struct CoinManager {
 
     func getPrice(for currency: String) {
         let urlString = "\(baseURL)/\(currency)?apikey=\(apiKey)"
-        performRequest(urlString: urlString)
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let safeData = data { //fg
+                     let bitcoinPrice = self.parseJSON(safeData)
+                 }
+                
+            }
+            task.resume()
+        }
     }
     
-    func performRequest(urlString: String){
-     
-            if let url = URL(string: urlString) {
-                
-                let session = URLSession(configuration: .default)
-                
-    
-                let task = session.dataTask(with: url) { (data, response, error) in
-                    if error != nil {
-                        print(error!)
-                        return
-                    }
-
-                    let dataAsString = String(data: data!, encoding: .utf8)
-                    print(dataAsString)
-                    
-                }
-                task.resume()
-            }
+    func parseJSON(_ data: Data) -> Double? {
         
-//        guard let URLAnime = URL(string: "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49") else {return}
-//
-//        URLSession.shared.dataTask(with: URLAnime) { data, response, error in
-//            guard let data = data else {return}
-//
-//            do {
-//                let animes = try JSONDecoder().decode(URLStructAnime.self, from: data)
-//                print(animes.original_title)
-//
-//            } catch  {
-//                print(error)
-//            }
-//
-//
-//        }.resume()
-        
-        
-        
+        let decoder = JSONDecoder()
+        do {
+            
+            let decodedData = try decoder.decode(CoinData.self, from: data)
+            
+            let lastPrice = decodedData.rate
+            print(lastPrice)
+            return lastPrice
+            
+        } catch {
+            print(error)
+            return nil
+        }
     }
 }

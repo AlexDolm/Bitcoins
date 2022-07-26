@@ -15,6 +15,7 @@
 		CE7EA327288FEB79009D8348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA325288FEB79009D8348 /* LaunchScreen.storyboard */; };
 		CEDC0393289001C200EBDE83 /* MainUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0392289001C200EBDE83 /* MainUI.swift */; };
 		CEDC03952890353200EBDE83 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC03942890353200EBDE83 /* CoinManager.swift */; };
+		CEDC03972890457500EBDE83 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC03962890457500EBDE83 /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CE7EA328288FEB79009D8348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDC0392289001C200EBDE83 /* MainUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUI.swift; sourceTree = "<group>"; };
 		CEDC03942890353200EBDE83 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		CEDC03962890457500EBDE83 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDC03942890353200EBDE83 /* CoinManager.swift */,
+				CEDC03962890457500EBDE83 /* CoinData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDC03972890457500EBDE83 /* CoinData.swift in Sources */,
 				CE7EA31F288FEB74009D8348 /* ViewController.swift in Sources */,
 				CE7EA31B288FEB74009D8348 /* AppDelegate.swift in Sources */,
 				CEDC0393289001C200EBDE83 /* MainUI.swift in Sources */,
