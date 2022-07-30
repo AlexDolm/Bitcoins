@@ -41,23 +41,26 @@ extension ViewController  {
         
         stackViewBitcoinCount.axis = .horizontal
         stackViewBitcoinCount.spacing = 10
-        stackViewBitcoinCount.distribution = .fillProportionally
+        stackViewBitcoinCount.distribution = .fill
         stackViewBitcoinCount.backgroundColor = .tertiaryLabel
-        stackViewBitcoinCount.layer.cornerRadius = 5
+        stackViewBitcoinCount.layer.cornerRadius = 35
         stackViewBitcoinCount.layer.masksToBounds = true
         viewBitcoinCount.addSubview(stackViewBitcoinCount)
         stackViewBitcoinCount.translatesAutoresizingMaskIntoConstraints = false
-        stackViewBitcoinCount.rightAnchor.constraint(equalTo: viewBitcoinCount.rightAnchor, constant: -10).isActive = true
-        stackViewBitcoinCount.leftAnchor.constraint(equalTo: viewBitcoinCount.leftAnchor, constant: 10).isActive = true
-        stackViewBitcoinCount.topAnchor.constraint(equalTo: viewBitcoinCount.topAnchor).isActive = true
+//        stackViewBitcoinCount.rightAnchor.constraint(equalTo: viewBitcoinCount.rightAnchor, constant: -10).isActive = true
+//        stackViewBitcoinCount.leftAnchor.constraint(equalTo: viewBitcoinCount.leftAnchor, constant: 10).isActive = true
+//        stackViewBitcoinCount.topAnchor.constraint(equalTo: viewBitcoinCount.topAnchor).isActive = true
+//        stackViewBitcoinCount.bottomAnchor.constraint(equalTo: viewBitcoinCount.bottomAnchor).isActive = true
+        stackViewBitcoinCount.heightAnchor.constraint(equalToConstant: 80).isActive = true
         stackViewBitcoinCount.bottomAnchor.constraint(equalTo: viewBitcoinCount.bottomAnchor).isActive = true
-        
+        stackViewBitcoinCount.centerXAnchor.constraint(equalTo: viewBitcoinCount.centerXAnchor).isActive = true
+
         
         image.image = UIImage(systemName: "bitcoinsign.circle.fill")
         image.tintColor = UIColor(named: "Icon Color")
         stackViewBitcoinCount.addArrangedSubview(image)
-        image.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        image.widthAnchor.constraint(equalToConstant: 85).isActive = true
 
         labelCount.text = "..."
         labelCount.textAlignment = .right
@@ -68,7 +71,7 @@ extension ViewController  {
 
         stackViewBitcoinCount.addArrangedSubview(viewCurrency)
         viewCurrency.translatesAutoresizingMaskIntoConstraints = false
-        viewCurrency.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        //viewCurrency.widthAnchor.constraint(equalToConstant: 70).isActive = true
   
         labelCurrency.text = "USD"
         labelCurrency.textAlignment = .right
