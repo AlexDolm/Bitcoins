@@ -7,28 +7,48 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate {
-    
+class ViewController: UIViewController  {
+
 
     let image = UIImageView()
     let labelCount = UILabel()
     let labelCurrency = UILabel()
     let pickerView = UIPickerView()
     
-    let coinManager = CoinManager()
+    var coinManager = CoinManager()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startUI()
+        coinManager.delegate = self
         pickerView.dataSource = self
         pickerView.delegate = self
+        
+        
     }
+    
+    
 
 
 }
 
-extension ViewController: UIPickerViewDataSource {
+extension ViewController: CoinManagerDelegate{
+    func didUpdatePrice(price: String, currency: String) {
+        DispatchQueue.main.async {
+            self.labelCount.text = price
+            self.labelCurrency.text = currency
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+}
+
+
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int { //количество столбцов выбора
         return 1
