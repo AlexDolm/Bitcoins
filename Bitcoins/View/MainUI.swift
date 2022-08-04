@@ -47,10 +47,6 @@ extension ViewController  {
         stackViewBitcoinCount.layer.masksToBounds = true
         viewBitcoinCount.addSubview(stackViewBitcoinCount)
         stackViewBitcoinCount.translatesAutoresizingMaskIntoConstraints = false
-//        stackViewBitcoinCount.rightAnchor.constraint(equalTo: viewBitcoinCount.rightAnchor, constant: -10).isActive = true
-//        stackViewBitcoinCount.leftAnchor.constraint(equalTo: viewBitcoinCount.leftAnchor, constant: 10).isActive = true
-//        stackViewBitcoinCount.topAnchor.constraint(equalTo: viewBitcoinCount.topAnchor).isActive = true
-//        stackViewBitcoinCount.bottomAnchor.constraint(equalTo: viewBitcoinCount.bottomAnchor).isActive = true
         stackViewBitcoinCount.heightAnchor.constraint(equalToConstant: 80).isActive = true
         stackViewBitcoinCount.bottomAnchor.constraint(equalTo: viewBitcoinCount.bottomAnchor).isActive = true
         stackViewBitcoinCount.centerXAnchor.constraint(equalTo: viewBitcoinCount.centerXAnchor).isActive = true
@@ -71,7 +67,6 @@ extension ViewController  {
 
         stackViewBitcoinCount.addArrangedSubview(viewCurrency)
         viewCurrency.translatesAutoresizingMaskIntoConstraints = false
-        //viewCurrency.widthAnchor.constraint(equalToConstant: 70).isActive = true
   
         labelCurrency.text = "USD"
         labelCurrency.textAlignment = .right

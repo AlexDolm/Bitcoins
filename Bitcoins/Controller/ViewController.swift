@@ -20,20 +20,14 @@ class ViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startUI()
+        startUI() //loading the interface
         coinManager.delegate = self
         pickerView.dataSource = self
         pickerView.delegate = self
-        
-        
     }
-    
-    
-
-
 }
 
-extension ViewController: CoinManagerDelegate{
+extension ViewController: CoinManagerDelegate{ //data update function
     func didUpdatePrice(price: String, currency: String) {
         DispatchQueue.main.async {
             self.labelCount.text = price
@@ -65,8 +59,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) { //будет вызываться каждый раз, когда пользователь прокручивает средство выбора. Когда это произойдет, он запишет номер строки, который был выбран.
         let currency = coinManager.currencyArray[row]
         coinManager.getPrice(for: currency)
-        
-        
+
     }
     
     
